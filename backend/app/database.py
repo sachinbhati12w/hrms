@@ -2,7 +2,13 @@ import certifi
 from motor.motor_asyncio import AsyncIOMotorClient
 from app.config import settings
 
-client = AsyncIOMotorClient(settings.MONGODB_URL, tlsCAFile=certifi.where())
+client = AsyncIOMotorClient(
+    settings.MONGODB_URL,
+    tlsCAFile=certifi.where(),
+    serverSelectionTimeoutMS=5000,
+    connectTimeoutMS=5000,
+    socketTimeoutMS=5000,
+)
 database = client[settings.DATABASE_NAME]
 
 # Collections
@@ -15,5 +21,6 @@ async def ping_db():
     try:
         await client.admin.command("ping")
         return True
-    except Exception:
+    except Exception as e:
+        print(f"Database ping failed: {e}")
         return False
