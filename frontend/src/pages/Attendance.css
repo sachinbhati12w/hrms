@@ -1,0 +1,49 @@
+.attendance-page {
+    max-width: 700px;
+}
+
+.attendance-form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+}
+
+.attendance-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.attendance-form-row .form-group {
+    margin-bottom: 0;
+}
+
+.mark-btn-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.attendance-success {
+    background: var(--success-light);
+    border: 1px solid var(--success);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    color: var(--success);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+@media (max-width: 640px) {
+    .attendance-form-row {
+        grid-template-columns: 1fr;
+    }
+}
