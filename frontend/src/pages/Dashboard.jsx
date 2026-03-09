@@ -55,7 +55,7 @@ export default function Dashboard() {
                         <Users size={24} />
                     </div>
                     <div className="stat-info">
-                        <h3>{data.total_employees}</h3>
+                        <h3>{data.total_employees ?? 0}</h3>
                         <p>Total Employees</p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ export default function Dashboard() {
                         <UserCheck size={24} />
                     </div>
                     <div className="stat-info">
-                        <h3>{data.today_present}</h3>
+                        <h3>{data.today_present ?? 0}</h3>
                         <p>Present Today</p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ export default function Dashboard() {
                         <UserX size={24} />
                     </div>
                     <div className="stat-info">
-                        <h3>{data.today_absent}</h3>
+                        <h3>{data.today_absent ?? 0}</h3>
                         <p>Absent Today</p>
                     </div>
                 </div>
@@ -85,13 +85,13 @@ export default function Dashboard() {
                         <Clock size={24} />
                     </div>
                     <div className="stat-info">
-                        <h3>{data.today_unmarked}</h3>
+                        <h3>{data.today_unmarked ?? 0}</h3>
                         <p>Unmarked Today</p>
                     </div>
                 </div>
             </div>
 
-            {data.departments.length > 0 && (
+            {data.departments?.length > 0 && (
                 <div className="dashboard-section">
                     <h2 className="dashboard-section-title">
                         <Building2 size={20} />
@@ -108,7 +108,7 @@ export default function Dashboard() {
                 </div>
             )}
 
-            {data.recent_attendance.length > 0 && (
+            {data.recent_attendance?.length > 0 && (
                 <div className="dashboard-section recent-section">
                     <h2 className="dashboard-section-title">
                         <Activity size={20} />

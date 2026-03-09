@@ -26,7 +26,7 @@ export default function Employees() {
             setLoading(true);
             setError(null);
             const data = await getEmployees();
-            setEmployees(data.employees);
+            setEmployees(data.employees || []);
         } catch (err) {
             setError('Failed to load employees. Please check your connection.');
         } finally {
